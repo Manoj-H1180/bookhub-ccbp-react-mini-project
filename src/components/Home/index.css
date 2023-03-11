@@ -206,4 +206,7 @@
   .home-container {
     margin-bottom: 0px;
   }
+  .failureViewPara {
+    text-align: center;
+  }
 }

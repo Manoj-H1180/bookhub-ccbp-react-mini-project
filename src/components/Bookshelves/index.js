@@ -106,11 +106,14 @@ class Bookshelves extends Component {
         {booksShelvesDetails.length === 0 ? (
           <div className="notFoundContainer">
             <img
+              className="noResultsImage"
               alt="no books"
               src="https://res.cloudinary.com/dy1lfg1dp/image/upload/v1678435225/Group_nd68ei.png"
             />
             <p className="notFoundText">
-              Your search for {userSearchInput} did not find any matches.
+              Your search for
+              <span className="userSearch"> {userSearchInput}</span> did not
+              find any matches.
             </p>
           </div>
         ) : (
@@ -151,6 +154,7 @@ class Bookshelves extends Component {
   renderFailureView = () => (
     <div className="bookShelvesFailureViewContainer">
       <img
+        className="failureMobileImage"
         alt="failure view"
         src="https://res.cloudinary.com/dy1lfg1dp/image/upload/v1678417888/Group_7522_lxzu4i.png"
       />
@@ -280,7 +284,9 @@ class Bookshelves extends Component {
               </div>
             </div>
             {this.renderBookSliverData()}
-            <Footer />
+            <div className="footer-section">
+              <Footer />
+            </div>
           </div>
         </div>
       </div>

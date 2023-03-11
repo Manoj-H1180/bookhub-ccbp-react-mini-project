@@ -176,4 +176,11 @@ hr {
     justify-content: center;
     margin: 0px;
   }
+  .detailsFailureImage {
+    width: 300px;
+  }
+  .detailsFailureHeading {
+    text-align: center;
+    font-size: 16px;
+  }
 }

@@ -49,16 +49,20 @@
   .nav-ul-items {
     display: none;
   }
-  .mobileResponsive {
-    background-color: #fff;
-    margin-top: 135px;
-    width: 100vw;
-    position: relative;
-  }
+
   .mobileNav {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
     align-items: center;
+    gap: 15px;
+  }
+  .navbar {
+    height: 69px;
+    border: 1px solid #e4e7eb;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

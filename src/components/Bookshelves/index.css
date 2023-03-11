@@ -204,6 +204,11 @@
   margin-top: 50px;
 }
 
+.footer-section {
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 786px) {
   .main-bookshelves-container {
     display: flex;
@@ -247,11 +252,7 @@
     background-color: #0284c7;
     color: #fff;
   }
-  .bookshelvesHome {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+
   .booksList {
     display: flex;
     flex-wrap: wrap;
@@ -263,4 +264,21 @@
   .mobileResponsiveBtn {
     display: block;
   }
+  .noResultsImage {
+    width: 250px;
+    height: 200px;
+  }
+  .notFoundText {
+    text-align: center;
+  }
+  .failureMobileImage {
+    width: 300px;
+  }
+  .bookShelvesFailureText {
+    text-align: center;
+  }
+}
+
+.userSearch {
+  font-weight: bold;
 }
