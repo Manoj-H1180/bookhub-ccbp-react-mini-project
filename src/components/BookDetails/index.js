@@ -87,7 +87,7 @@ class BookDetails extends Component {
               <p className="detailsAuthor">{authorName}</p>
               <p className="detailsRating">
                 Avg Rating <BsFillStarFill className="star-icon" />
-                <p className="details-rating">{rating}</p>
+                <span className="details-rating">{rating}</span>
               </p>
               <p className="detailsStatus">
                 Status: <span className="details-status">{readStatus}</span>

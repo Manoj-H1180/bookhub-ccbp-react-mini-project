@@ -114,7 +114,7 @@ class Bookshelves extends Component {
             </p>
           </div>
         ) : (
-          <ul className="booksList">
+          <div className="booksList">
             {booksShelvesDetails.map(eachBook => (
               <Link
                 className="link"
@@ -132,7 +132,7 @@ class Bookshelves extends Component {
                     <p className="shelves-author">{eachBook.authorName}</p>
                     <p className="shelves-rating">
                       Avg Rating <BsFillStarFill className="star-icon" />
-                      {eachBook.rating}
+                      <span> {eachBook.rating}</span>
                     </p>
                     <p className="shelves-status">
                       Status:
@@ -142,7 +142,7 @@ class Bookshelves extends Component {
                 </li>
               </Link>
             ))}
-          </ul>
+          </div>
         )}
       </>
     )
@@ -190,12 +190,12 @@ class Bookshelves extends Component {
   render() {
     const {sidebarLabel, userSearchInput} = this.state
     return (
-      <div>
+      <div className="bookshelvesHome">
         <Header bookShelvesList />
         <div className="main-bookshelves-container">
           <div className="sidebar">
             <h1 className="sidebar-title">Bookshelves</h1>
-            <ul className="sidebar-ul">
+            <div className="sidebar-ul">
               {bookshelvesList.map(each => {
                 const activeList =
                   sidebarLabel === each.label ? 'activeTab' : ''
@@ -209,7 +209,7 @@ class Bookshelves extends Component {
                   )
                 }
                 return (
-                  <div key={each.id}>
+                  <div key={each.id} className="d-sidebar">
                     <button
                       type="button"
                       className="sidebarListBtn"
@@ -226,7 +226,7 @@ class Bookshelves extends Component {
                   </div>
                 )
               })}
-            </ul>
+            </div>
           </div>
           <div className="bookShelvesList">
             <div className="searchContainer">
@@ -248,6 +248,35 @@ class Bookshelves extends Component {
                 >
                   <BsSearch className="search-icon" />
                 </button>
+              </div>
+            </div>
+            <div className="mobileResponsiveBtn">
+              <h1 className="mHeading">Bookshelves</h1>
+              <div className="mobile-shelves-list">
+                {bookshelvesList.map(each => {
+                  const activeList =
+                    sidebarLabel === each.label ? 'activeColor' : ''
+                  const onClickUpdateData = () => {
+                    this.setState(
+                      {
+                        bookshelfName: each.value,
+                        sidebarLabel: each.label,
+                      },
+                      this.getBookShelvesDetails,
+                    )
+                  }
+                  return (
+                    <div key={each.id}>
+                      <button
+                        className={`mListBtn ${activeList}`}
+                        type="button"
+                        onClick={onClickUpdateData}
+                      >
+                        <li className="mobileButtonList">{each.label}</li>
+                      </button>
+                    </div>
+                  )
+                })}
               </div>
             </div>
             {this.renderBookSliverData()}
