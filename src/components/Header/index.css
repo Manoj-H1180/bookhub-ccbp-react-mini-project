@@ -1,0 +1,64 @@
+.navbar {
+  height: 69px;
+  border: 1px solid #e4e7eb;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.nav-links,
+.nav-ul-items {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  color: #64748b;
+}
+
+.logout-btn {
+  background-color: #0284c7;
+  color: #fff;
+  border-radius: 4px;
+  width: 73px;
+  height: 32px;
+  border: none;
+  cursor: pointer;
+}
+
+.home-logo {
+  width: 100px;
+}
+
+.link {
+  color: #64748b;
+  text-decoration: none;
+}
+
+.active-tab {
+  color: #0284c7;
+  font-weight: 500;
+  font-size: 16px;
+}
+.mobileNav {
+  display: none;
+}
+
+@media screen and (max-width: 786px) {
+  .nav-ul-items {
+    display: none;
+  }
+  .mobileResponsive {
+    background-color: #fff;
+    margin-top: 135px;
+    width: 100vw;
+    position: relative;
+  }
+  .mobileNav {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
