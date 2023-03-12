@@ -61,9 +61,22 @@ class BookDetails extends Component {
   }
 
   renderLoaderView = () => (
-    <div className="spinner-loader-container" testid="loader">
-      <Loader type="TailSpin" color="#0284C7" height={50} width={50} />
-    </div>
+    <BookshelvesContext.Consumer>
+      {value => {
+        const {themeMode} = value
+
+        return (
+          <div
+            className={`spinner-loader-container ${
+              themeMode && 'spinner-dark'
+            }`}
+            testid="loader"
+          >
+            <Loader type="TailSpin" color="#0284C7" height={50} width={50} />
+          </div>
+        )
+      }}
+    </BookshelvesContext.Consumer>
   )
 
   renderBookDetails = () => {
@@ -139,23 +152,31 @@ class BookDetails extends Component {
   }
 
   renderFailureView = () => (
-    <div className="detailsFailureView">
-      <img
-        className="detailsFailureImage"
-        alt="failure view"
-        src="https://res.cloudinary.com/dy1lfg1dp/image/upload/v1678417888/Group_7522_lxzu4i.png"
-      />
-      <p className="detailsFailureHeading">
-        Something went wrong, Please try again.
-      </p>
-      <button
-        type="button"
-        className="failureRetryBtn"
-        onClick={this.onCLickFetchBookDetails}
-      >
-        Try Again
-      </button>
-    </div>
+    <BookshelvesContext.Consumer>
+      {value => {
+        const {themeMode} = value
+
+        return (
+          <div className={`detailsFailureView ${themeMode && 'bgDark'}`}>
+            <img
+              className="detailsFailureImage"
+              alt="failure view"
+              src="https://res.cloudinary.com/dy1lfg1dp/image/upload/v1678417888/Group_7522_lxzu4i.png"
+            />
+            <p className="detailsFailureHeading">
+              Something went wrong, Please try again.
+            </p>
+            <button
+              type="button"
+              className="failureRetryBtn"
+              onClick={this.onCLickFetchBookDetails}
+            >
+              Try Again
+            </button>
+          </div>
+        )
+      }}
+    </BookshelvesContext.Consumer>
   )
 
   renderDetailsBasedOnApiStatus = () => {

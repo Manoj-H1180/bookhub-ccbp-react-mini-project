@@ -17,7 +17,7 @@ const Footer = () => (
               <FaInstagram />
               <FaYoutube />
             </div>
-            <Link className="link" to="/contact">
+            <Link className="links" to="/contact">
               <p className="footer-title">Contact us</p>
             </Link>
           </div>

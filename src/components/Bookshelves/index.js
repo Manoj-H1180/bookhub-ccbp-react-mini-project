@@ -339,7 +339,7 @@ class Bookshelves extends Component {
                     </div>
                   </div>
                   {this.renderBookSliverData()}
-                  <div className={`footer-section ${'bgDark'}`}>
+                  <div className={`footer-section ${themeMode && 'bgDark'}`}>
                     <Footer />
                   </div>
                 </div>

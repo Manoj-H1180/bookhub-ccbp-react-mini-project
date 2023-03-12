@@ -48,6 +48,7 @@
 .themeSwitcher {
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .theme-icon {

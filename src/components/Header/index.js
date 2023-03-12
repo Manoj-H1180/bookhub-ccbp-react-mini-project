@@ -27,7 +27,7 @@ const Header = props => {
 
         return (
           <header className={`responsiveNavbar ${themeMode && 'darkTheme'}`}>
-            <nav className={`navbar ${themeMode && 'darkTheme'}`}>
+            <nav className="navbar">
               <Link className="link" to="/">
                 <img
                   className="home-logo"
@@ -73,7 +73,9 @@ const Header = props => {
                     onClick={onClickTheme}
                   >
                     {themeMode ? (
-                      <FiSun className="theme-icon" />
+                      <FiSun
+                        className={`theme-icon ${themeMode && 'themeColor'}`}
+                      />
                     ) : (
                       <BiMoon className="theme-icon" />
                     )}

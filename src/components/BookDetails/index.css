@@ -95,7 +95,13 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20%;
+  padding-top: 10%;
+  height: 100vh;
+}
+
+.spinner-dark {
+  background-size: cover;
+  background-color: #000;
 }
 
 .detailsFailureView {
@@ -141,9 +147,6 @@ hr {
 }
 
 @media screen and (max-width: 786px) {
-  .bookDetailsBox {
-    background-color: #f5f7fa;
-  }
   .imgDetails {
     display: flex;
     flex-direction: column;
@@ -164,7 +167,6 @@ hr {
     font-size: 16px;
   }
   .bookDetailsContainer {
-    background-color: #f5f7fa;
     padding: 20px 15px;
     box-shadow: none;
     border-radius: 0px;
