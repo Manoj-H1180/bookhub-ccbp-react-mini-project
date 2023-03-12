@@ -81,14 +81,29 @@ label {
   .main-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding-top: 160px;
+    padding-top: 60px;
     background-color: #fff;
+    height: 100vh;
   }
   .login-page-image {
     width: 200px;
     height: 200px;
     border-radius: 50%;
+  }
+  .userInput {
+    width: 350px;
+    padding: 10px;
+  }
+  .loginBtn {
+    width: 350px;
+  }
+  .main-container {
+    height: 100%;
+    width: 100%;
+  }
+  .form-container {
+    display: flex;
+    flex-direction: column;
   }
 }

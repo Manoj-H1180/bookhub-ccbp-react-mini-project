@@ -5,6 +5,7 @@ import Loader from 'react-loader-spinner'
 import {BsFillStarFill} from 'react-icons/bs'
 import Header from '../Header'
 import Footer from '../Footer'
+import BookshelvesContext from '../../context/BookshelvesContext'
 
 const apiStatus = {
   initial: 'INITIAL',
@@ -78,33 +79,62 @@ class BookDetails extends Component {
     } = bookDetailsList
 
     return (
-      <div className="bookDetailsContainer">
-        <div className="bookDetailsBox">
-          <div className="imgDetails">
-            <img className="detailsImage" alt={title} src={coverPic} />
-            <div className="detailsContainer">
-              <h1 className="details-title">{title}</h1>
-              <p className="detailsAuthor">{authorName}</p>
-              <p className="detailsRating">
-                Avg Rating <BsFillStarFill className="star-icon" />
-                <span className="details-rating">{rating}</span>
-              </p>
-              <p className="detailsStatus">
-                Status: <span className="details-status">{readStatus}</span>
-              </p>
+      <BookshelvesContext.Consumer>
+        {value => {
+          const {themeMode} = value
+
+          return (
+            <div className={`bookDetailsContainer ${themeMode && 'bgDark'}`}>
+              <div className={`bookDetailsBox ${themeMode && 'boxBgDark'}`}>
+                <div className="imgDetails">
+                  <img className="detailsImage" alt={title} src={coverPic} />
+                  <div className="detailsContainer">
+                    <h1
+                      className={`details-title ${themeMode && 'colorWhite'}`}
+                    >
+                      {title}
+                    </h1>
+                    <p className={`detailsAuthor ${themeMode && 'colorWhite'}`}>
+                      {authorName}
+                    </p>
+                    <p className={`detailsRating ${themeMode && 'colorWhite'}`}>
+                      Avg Rating <BsFillStarFill className="star-icon" />
+                      <span
+                        className={`details-rating ${
+                          themeMode && 'colorWhite'
+                        }`}
+                      >
+                        {rating}
+                      </span>
+                    </p>
+                    <p className={`detailsStatus ${themeMode && 'colorWhite'}`}>
+                      Status:
+                      <span className="details-status"> {readStatus}</span>
+                    </p>
+                  </div>
+                </div>
+                <hr />
+                <div>
+                  <h1 className={`aboutHeading ${themeMode && 'colorWhite'}`}>
+                    About Author
+                  </h1>
+                  <p className={`aboutAuthor ${themeMode && 'colorWhite'}`}>
+                    {aboutAuthor}
+                  </p>
+                </div>
+                <div className="aboutContainer">
+                  <h1 className={`aboutHeading ${themeMode && 'colorWhite'}`}>
+                    About Book
+                  </h1>
+                  <p className={`aboutBook ${themeMode && 'colorWhite'}`}>
+                    {aboutBook}
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-          <hr />
-          <div>
-            <h1 className="aboutHeading">About Author</h1>
-            <p className="aboutAuthor">{aboutAuthor}</p>
-          </div>
-          <div className="aboutContainer">
-            <h1 className="aboutHeading">About Book</h1>
-            <p className="aboutBook">{aboutBook}</p>
-          </div>
-        </div>
-      </div>
+          )
+        }}
+      </BookshelvesContext.Consumer>
     )
   }
 

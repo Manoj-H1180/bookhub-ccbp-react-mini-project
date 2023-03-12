@@ -7,6 +7,7 @@ import Loader from 'react-loader-spinner'
 import Header from '../Header'
 import Footer from '../Footer'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
+import BookshelvesContext from '../../context/BookshelvesContext'
 
 const settings = {
   dots: false,
@@ -87,30 +88,54 @@ class Home extends Component {
   renderSlider = () => {
     const {topRatedBooks} = this.state
     return (
-      <Slider {...settings}>
-        {topRatedBooks.map(eachTopBook => {
-          const {id, title, coverPic, authorName} = eachTopBook
-          const onClickedTopRatedBook = () => {
-            const {history} = this.props
-            history.push(`/books/${id}`)
-          }
+      <BookshelvesContext.Consumer>
+        {value => {
+          const {themeMode} = value
+
           return (
-            <div key={id}>
-              <button
-                className="sliderBtn"
-                type="button"
-                onClick={onClickedTopRatedBook}
-              >
-                <div className="slick-item">
-                  <img className="cover-image" src={coverPic} alt={title} />
-                  <h1 className="slider-title">{title}</h1>
-                  <p className="slider-authorName">{authorName}</p>
-                </div>
-              </button>
-            </div>
+            <Slider {...settings}>
+              {topRatedBooks.map(eachTopBook => {
+                const {id, title, coverPic, authorName} = eachTopBook
+                const onClickedTopRatedBook = () => {
+                  const {history} = this.props
+                  history.push(`/books/${id}`)
+                }
+                return (
+                  <div key={id} className={themeMode ? 'darkMode' : ''}>
+                    <button
+                      className="sliderBtn"
+                      type="button"
+                      onClick={onClickedTopRatedBook}
+                    >
+                      <div className="slick-item">
+                        <img
+                          className="cover-image"
+                          src={coverPic}
+                          alt={title}
+                        />
+                        <h1
+                          className={`slider-title ${
+                            themeMode && 'colorWhite'
+                          }`}
+                        >
+                          {title}
+                        </h1>
+                        <p
+                          className={`slider-authorName ${
+                            themeMode && 'colorWhite'
+                          }`}
+                        >
+                          {authorName}
+                        </p>
+                      </div>
+                    </button>
+                  </div>
+                )
+              })}
+            </Slider>
           )
-        })}
-      </Slider>
+        }}
+      </BookshelvesContext.Consumer>
     )
   }
 
@@ -164,43 +189,60 @@ class Home extends Component {
     if (token === undefined) {
       return <Redirect to="/login" />
     }
+
     return (
-      <div>
-        <Header home />
-        <div className="home-container">
-          <div className="hero-text">
-            <h1 className="hero-title">Find Your Next Favorite Books?</h1>
-            <p className="hero-desc">
-              You are in the right place. Tell us what titles or genres you have
-              enjoyed in the past, and we will give you surprisingly insightful
-              recommendations.
-            </p>
-            <button
-              type="button"
-              className="topRatedFindBooksMobile"
-              onClick={this.onClickFindBooks}
-            >
-              Find Books
-            </button>
-          </div>
-          <div className="topRatedBooksContainer">
-            <div className="top-rated-row">
-              <h1 className="top-rated-title">Top Rated Books</h1>
-              <button
-                type="button"
-                className="topRatedFindBooks"
-                onClick={this.onClickFindBooks}
-              >
-                Find Books
-              </button>
+      <BookshelvesContext.Consumer>
+        {value => {
+          const {themeMode} = value
+
+          return (
+            <div>
+              <Header home />
+              <div className={`home-container ${themeMode && 'darkTheme'}`}>
+                <div className="hero-text">
+                  <h1 className={`hero-title ${themeMode && 'colorWhite'}`}>
+                    Find Your Next Favorite Books?
+                  </h1>
+                  <p className="hero-desc">
+                    You are in the right place. Tell us what titles or genres
+                    you have enjoyed in the past, and we will give you
+                    surprisingly insightful recommendations.
+                  </p>
+                  <button
+                    type="button"
+                    className="topRatedFindBooksMobile"
+                    onClick={this.onClickFindBooks}
+                  >
+                    Find Books
+                  </button>
+                </div>
+                <div
+                  className={`topRatedBooksContainer ${
+                    themeMode && 'boxColor'
+                  }`}
+                >
+                  <div className="top-rated-row">
+                    <h1 className={`top-rated-title ${'colorWhite'}`}>
+                      Top Rated Books
+                    </h1>
+                    <button
+                      type="button"
+                      className="topRatedFindBooks"
+                      onClick={this.onClickFindBooks}
+                    >
+                      Find Books
+                    </button>
+                  </div>
+                  <div className="slick-container">
+                    {this.renderComponentBasedOnTheApiStatus()}
+                  </div>
+                </div>
+              </div>
+              <Footer />
             </div>
-            <div className="slick-container">
-              {this.renderComponentBasedOnTheApiStatus()}
-            </div>
-          </div>
-        </div>
-        <Footer />
-      </div>
+          )
+        }}
+      </BookshelvesContext.Consumer>
     )
   }
 }

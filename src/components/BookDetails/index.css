@@ -1,5 +1,5 @@
 .bookDetailsContainer {
-  background-color: #e5e5e5;
+  background-color: #f5f7fa;
   height: 120vh;
   background-size: cover;
   display: flex;
@@ -127,9 +127,22 @@ hr {
   height: 100vh;
 }
 
+.bgDark {
+  background-color: #000;
+}
+
+.colorWhite {
+  color: #fff;
+}
+
+.boxBgDark {
+  background-color: #000;
+  border: 1px solid #fff;
+}
+
 @media screen and (max-width: 786px) {
   .bookDetailsBox {
-    background-color: #e9e9e9;
+    background-color: #f5f7fa;
   }
   .imgDetails {
     display: flex;
@@ -151,7 +164,7 @@ hr {
     font-size: 16px;
   }
   .bookDetailsContainer {
-    background-color: #e9e9e9;
+    background-color: #f5f7fa;
     padding: 20px 15px;
     box-shadow: none;
     border-radius: 0px;

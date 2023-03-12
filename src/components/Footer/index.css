@@ -1,5 +1,5 @@
 .footer-section {
-  background-color: #e9e9e9;
+  background-color: #f5f7fa;
   display: flex;
   justify-content: center;
 }
@@ -15,4 +15,9 @@
 .row {
   gap: 20px;
   display: flex;
+}
+
+.darkBg {
+  background-color: #000;
+  color: #fff;
 }

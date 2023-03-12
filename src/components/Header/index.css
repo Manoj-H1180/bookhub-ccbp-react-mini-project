@@ -45,6 +45,25 @@
   display: none;
 }
 
+.themeSwitcher {
+  background-color: transparent;
+  border: none;
+}
+
+.theme-icon {
+  height: 30px;
+  width: 30px;
+}
+
+.themeColor {
+  color: #fff;
+}
+
+.darkTheme {
+  background-color: #000;
+  border: 1px solid #000;
+}
+
 @media screen and (max-width: 786px) {
   .nav-ul-items {
     display: none;
