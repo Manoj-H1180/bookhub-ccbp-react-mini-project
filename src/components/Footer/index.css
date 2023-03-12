@@ -21,3 +21,8 @@
   background-color: #000;
   color: #fff;
 }
+
+.link {
+  text-decoration: none;
+  color: #3d3c3c;
+}

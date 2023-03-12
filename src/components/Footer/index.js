@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 import './index.css'
 import {FaGoogle, FaTwitter, FaInstagram, FaYoutube} from 'react-icons/fa'
 import BookshelvesContext from '../../context/BookshelvesContext'
@@ -16,7 +17,9 @@ const Footer = () => (
               <FaInstagram />
               <FaYoutube />
             </div>
-            <p className="footer-title">Contact us</p>
+            <Link className="link" to="/contact">
+              <p className="footer-title">Contact us</p>
+            </Link>
           </div>
         </div>
       )
