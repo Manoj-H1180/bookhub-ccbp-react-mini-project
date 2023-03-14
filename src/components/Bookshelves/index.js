@@ -331,7 +331,13 @@ class Bookshelves extends Component {
                               type="button"
                               onClick={onClickUpdateData}
                             >
-                              <li className="mobileButtonList">{each.label}</li>
+                              <li
+                                className={`mobileButtonList ${
+                                  themeMode && 'mobileButtonListBlack'
+                                }`}
+                              >
+                                {each.label}
+                              </li>
                             </button>
                           </div>
                         )

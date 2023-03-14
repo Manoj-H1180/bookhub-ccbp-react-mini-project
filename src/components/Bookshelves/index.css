@@ -270,12 +270,19 @@
     padding-right: 16px;
     width: 100%;
     height: 25px;
-    color: #fff;
+    color: #000;
     cursor: pointer;
   }
   .mobileButtonList {
     font-size: 14px;
+    color: #000;
   }
+
+  .mobileButtonListBlack {
+    font-size: 14px;
+    color: #fff;
+  }
+
   .mHeading {
     font-size: 16px;
     font-weight: 600;
