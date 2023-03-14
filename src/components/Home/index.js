@@ -222,7 +222,9 @@ class Home extends Component {
                   }`}
                 >
                   <div className="top-rated-row">
-                    <h1 className={`top-rated-title ${'colorWhite'}`}>
+                    <h1
+                      className={`top-rated-title ${themeMode && 'colorWhite'}`}
+                    >
                       Top Rated Books
                     </h1>
                     <button
