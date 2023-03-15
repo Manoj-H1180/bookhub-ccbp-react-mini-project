@@ -8,6 +8,19 @@
   padding-left: 40px;
   padding-right: 40px;
 }
+
+.m-nav {
+  height: 69px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-bottom: 1px solid #fff;
+}
+
 .nav-links,
 .nav-ul-items {
   display: flex;
@@ -74,15 +87,5 @@
     display: flex;
     align-items: center;
     gap: 15px;
-  }
-  .navbar {
-    height: 69px;
-    border: 1px solid #e4e7eb;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
   }
 }

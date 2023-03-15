@@ -146,6 +146,40 @@ hr {
   border: 1px solid #fff;
 }
 
+.favBtn {
+  background-color: #0284c7;
+  color: #fff;
+  border-radius: 4px;
+  width: 130px;
+  height: 32px;
+  border: none;
+  cursor: pointer;
+}
+
+button.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  background-color: #0284c7;
+  color: #fff;
+  border-radius: 4px;
+  width: 130px;
+  height: 32px;
+  border: none;
+}
+
+button.disabled:hover {
+  background-color: #eee;
+}
+
+.symbol {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  color: red;
+}
+
 @media screen and (max-width: 786px) {
   .imgDetails {
     display: flex;

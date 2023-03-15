@@ -94,7 +94,15 @@ class BookDetails extends Component {
     return (
       <BookshelvesContext.Consumer>
         {value => {
-          const {themeMode} = value
+          const {themeMode, onClickAddToFav, myFav} = value
+
+          const onClickAddToFavData = () => {
+            onClickAddToFav({...bookDetailsList})
+          }
+
+          const isBookInFavorites = myFav.some(
+            book => book.id === bookDetailsList.id,
+          )
 
           return (
             <div className={`bookDetailsContainer ${themeMode && 'bgDark'}`}>
@@ -124,6 +132,26 @@ class BookDetails extends Component {
                       Status:
                       <span className="details-status"> {readStatus}</span>
                     </p>
+                    {isBookInFavorites ? (
+                      <button
+                        onClick={onClickAddToFavData}
+                        type="button"
+                        className={
+                          isBookInFavorites ? 'disabled' : 'addedFavbtn'
+                        }
+                        disabled={isBookInFavorites}
+                      >
+                        Added To Favorite
+                      </button>
+                    ) : (
+                      <button
+                        onClick={onClickAddToFavData}
+                        type="button"
+                        className="favBtn"
+                      >
+                        Add To Favorite
+                      </button>
+                    )}
                   </div>
                 </div>
                 <hr />

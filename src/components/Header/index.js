@@ -16,9 +16,10 @@ const Header = props => {
     history.replace('/login')
   }
 
-  const {home, bookShelvesList} = props
+  const {home, bookShelvesList, favorites} = props
   const activeTab = home ? 'active-tab' : ''
   const activeBookShelves = bookShelvesList ? 'active-tab' : ''
+  const favTab = favorites ? 'active-tab' : ''
 
   return (
     <BookshelvesContext.Consumer>
@@ -27,7 +28,7 @@ const Header = props => {
 
         return (
           <header className={`responsiveNavbar ${themeMode && 'darkTheme'}`}>
-            <nav className="navbar">
+            <nav className={themeMode ? 'm-nav' : 'navbar'}>
               <Link className="link" to="/">
                 <img
                   className="home-logo"
@@ -42,6 +43,9 @@ const Header = props => {
                   </Link>
                   <Link className={`link ${activeBookShelves}`} to="/shelf">
                     <li className="list">Bookshelves</li>
+                  </Link>
+                  <Link to="/myfavorite" className={`link ${favTab}`}>
+                    <li className="list">Myfavorite</li>
                   </Link>
                   <button
                     className="themeSwitcher"
@@ -96,6 +100,9 @@ const Header = props => {
                   </Link>
                   <Link className={`link ${activeBookShelves}`} to="/shelf">
                     <li className="list">Bookshelves</li>
+                  </Link>
+                  <Link to="/myfavorite" className={`link ${favTab}`}>
+                    <li className="list">Myfavorite</li>
                   </Link>
                 </ul>
                 <button

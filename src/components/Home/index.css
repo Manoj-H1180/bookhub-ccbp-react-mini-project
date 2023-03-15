@@ -156,6 +156,7 @@
 
 .colorWhite {
   color: #fff;
+  width: 100%;
 }
 
 .boxColor {
@@ -228,5 +229,9 @@
   }
   .failureViewPara {
     text-align: center;
+  }
+  .slick-prev,
+  .slick-next {
+    color: #fff;
   }
 }

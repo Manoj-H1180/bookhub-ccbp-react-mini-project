@@ -283,7 +283,11 @@ class Bookshelves extends Component {
                 </div>
                 <div className="bookShelvesList">
                   <div className="searchContainer">
-                    <h1 className={`searchContainer-Title ${'colorWhite'}`}>
+                    <h1
+                      className={`searchContainer-Title ${
+                        themeMode && 'colorWhite'
+                      }`}
+                    >
                       {sidebarLabel} Books
                     </h1>
                     <div className="searchElement">
