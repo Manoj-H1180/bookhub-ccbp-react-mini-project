@@ -13,7 +13,7 @@ Reading Progress Tracking: Keep track of the books you've read, your current rea
 Engage in Discussions: Participate in vibrant discussions with fellow bookworms and share your thoughts on various books.
 
 Getting Started
-Clone the repository: git clone https://github.com/yourusername/bookhub.git
+Clone the repository: git clone https://github.com/Manoj-H1180/bookhub-ccbp-react-mini-project
 
 Install the required dependencies: npm install
 
