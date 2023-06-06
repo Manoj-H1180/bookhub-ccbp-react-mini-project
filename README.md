@@ -15,9 +15,13 @@ Engage in Discussions: Participate in vibrant discussions with fellow bookworms 
 Getting Started
 Clone the repository: git clone https://github.com/Manoj-H1180/bookhub-ccbp-react-mini-project
 
-Install the required dependencies: npm install
+Install the required dependencies: 
 
-Start the development server: npm start
+`npm install`
+
+Start the development server: 
+
+`npm start`
 
 Access Bookhub in your web browser at: http://localhost:3000
 
@@ -26,11 +30,17 @@ We welcome contributions from the community to make Bookhub even better. To cont
 
 Fork the repository.
 
-Create a new branch: git checkout -b feature/my-new-feature
+Create a new branch: 
 
-Make your changes and commit them: git commit -m "Add my new feature"
+`git checkout -b feature/my-new-feature`
 
-Push to your forked repository: git push origin feature/my-new-feature
+Make your changes and commit them: 
+
+`git commit -m "Add my new feature"`
+
+Push to your forked repository: 
+
+`git push origin feature/my-new-feature`
 
 Create a new pull request with a description of your changes.
 
