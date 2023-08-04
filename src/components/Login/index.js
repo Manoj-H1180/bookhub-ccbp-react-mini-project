@@ -73,6 +73,7 @@ class Login extends Component {
                   className="userInput"
                   placeholder="Enter your name"
                   onChange={this.onChangeUsername}
+                  value={username}
                 />
               </div>
               <div className="input-container">
@@ -83,6 +84,7 @@ class Login extends Component {
                   className="userInput"
                   placeholder="Enter your password"
                   onChange={this.onChangePassword}
+                  value={password}
                 />
                 <p className="loginError">{errorMsg}</p>
               </div>
