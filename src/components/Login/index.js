@@ -4,7 +4,7 @@ import {Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
 
 class Login extends Component {
-  state = {username: '', password: '', errorMsg: ''}
+  state = {username: 'rahul', password: 'rahul@2021', errorMsg: ''}
 
   onChangeUsername = event => {
     this.setState({username: event.target.value})
