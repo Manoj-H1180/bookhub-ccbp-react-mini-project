@@ -88,7 +88,7 @@ class Login extends Component {
               </div>
 
               <button type="submit" className="loginBtn">
-                Login
+                Auto Login
               </button>
             </form>
           </div>
